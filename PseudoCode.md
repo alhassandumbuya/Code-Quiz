@@ -5,7 +5,10 @@
 A start game variable will be created which have functions that will start the game, time and load up the questions 
 
 * For the questions, I will start off my taging the questions id from the document. This will be use from moving the hide clase to visible. 
-    - from there I will target the questions-title tags and apprenchild on there for the questions.
+    - from there I will target the questionsTtitle tags and apprenchild on there for the questions.
+
+
+* For the choices, I will use appendchild to create a div that will hold diffrent buttons for the answers.
 
 
 
