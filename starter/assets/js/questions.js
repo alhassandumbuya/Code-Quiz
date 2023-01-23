@@ -1,3 +1,49 @@
+let questions = [
+    {
+        questionTitle: "Where is the correct place to insert a JavaScript?",
+        options: [
+            { text: "The <Head> section", choices: false },
+            { text: "The <Body> section", choices: true },
+            { text: "The <Both> section", choices: false },
+        ]
+    },
+
+    {
+        questionTitle: "Where is the correct place to insert a JavaScript?",
+        options: [
+            { text: "The <Head> section", choices: false },
+            { text: "The <Body> section", choices: true },
+            { text: "The <Both> section", choices: false },
+        ]
+    },
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 var questionMode = document.querySelectorA("#questions");
 var startQuiz = document.querySelector("#start");
 console.log(questionMode);

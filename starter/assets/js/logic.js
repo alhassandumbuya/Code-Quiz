@@ -1,11 +1,11 @@
-var startQuiz = document.querySelector("#start");
-var startScreenContainerEl = document.querySelector("#start-screen");
-var timerElement = document.querySelector(".timer");
-let questionContainerEl = document.querySelector("#questions")
-console.log(timerElement);
-console.log(startQuiz);
-var isWin = false;
-var timer = 20; 
+let startQuizBtn = document.querySelector("#start");
+let startScreenContainerEl = document.querySelector("#start-screen");
+let timerElement = document.querySelector(".timer");
+let questionContainerEl = document.querySelector("#questions");
+let options = document.querySelector("#options")
+let shuffledQuestions, currentQuestionIndex
+let isWin = false;
+let timer = 20; 
 
 
 
@@ -14,12 +14,12 @@ var timer = 20;
 function startGame() {
     setTime()
     questionContainerEl.classList.remove("hide")
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex= 0
     startScreenContainerEl.classList.add("hide")
-    isWin = false
+    randomQuestion(shuffledQuestions[currentQuestionIndex])
     
 }
-
-
 function setTime() {
     // Sets interval in variable
     var timerInterval = setInterval(function() {
@@ -33,14 +33,23 @@ function setTime() {
   
     }, 1000);
   }
+// function questions() {
+//     randomQuestion(shuffledQuestions[currentQuestionIndex])
+// }
 
+function randomQuestion(questionTitle) {
+    questionContainerEl.innerText = questionTitle.questionTitle
+}
 
+//function options(choices) {
+    
+//};
 
 
 
 
 //event listener for the start button to lunch the game 
-startQuiz.addEventListener("click", startGame);
+startQuizBtn.addEventListener("click", startGame);
 
 
 
