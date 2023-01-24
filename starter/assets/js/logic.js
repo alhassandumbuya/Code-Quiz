@@ -2,7 +2,8 @@ let startQuizBtn = document.querySelector("#start");
 let startScreenContainerEl = document.querySelector("#start-screen");
 let timerElement = document.querySelector(".timer");
 let questionContainerEl = document.querySelector("#questions");
-let answersBtn = document.querySelector("#options")
+let questionTitleEl = document.querySelector("#question-Title")
+let answersBtnEl = document.querySelector("#options")
 let shuffledQuestions, currentQuestionIndex //this variables are used to shuffle the questions arounf
 let isWin = false;
 let timer = 20; 
@@ -39,9 +40,9 @@ function setTime() {
 
   //This function allows the questions to pop up after clicking the start btn. 
 function randomQuestion(questionTitle) {
-    questionContainerEl.innerText = questionTitle.questionTitle
+    questionTitleEl.innerText = questionTitle.questionTitle
 
-    question.answersBtn.forEach(answer => {
+    questionTitle.answersBtn.forEach(answer => {
         let button = document.createElement('button')
         button.innerText = answer.text
         button.classList.add('btn')
@@ -49,13 +50,37 @@ function randomQuestion(questionTitle) {
             button.dataset.choices = answer.choices
         }
         button.addEventListener('click', selectAnswer)
-        answerBu
+        answersBtnEl.appendChild(button)
     })
 }
 
+
+
+
 function selectAnswer(e) {
+    let selectedAnswer = e.target
+    let choices = selectedAnswer.dataset.correct
+    setStatusClass(document.body, choices)
+    Array.from(answersBtnEl.children).forEach(button => {
+      setStatusClass(button, button.dataset.choices)})
     
 }
+
+function setStatusClass(element, choices) {
+  clearStatusClass(element)
+  if (choices) {
+    element.classList.add('correct')
+  } else {
+    element.classList.add('wrong')
+  }
+}
+
+function clearStatusClass(element) {
+  element.classList.remove('correct')
+  element.classList.remove('wrong')
+}
+
+
 
 //function options(choices) {
     
