@@ -2,10 +2,11 @@ let startQuizBtn = document.querySelector("#start");
 let startScreenContainerEl = document.querySelector("#start-screen");
 let timerElement = document.querySelector(".timer");
 let questionContainerEl = document.querySelector("#questions");
-let options = document.querySelector("#options")
-let shuffledQuestions, currentQuestionIndex
+let answersBtn = document.querySelector("#options")
+let shuffledQuestions, currentQuestionIndex //this variables are used to shuffle the questions arounf
 let isWin = false;
 let timer = 20; 
+
 
 
 
@@ -18,6 +19,7 @@ function startGame() {
     currentQuestionIndex= 0
     startScreenContainerEl.classList.add("hide")
     randomQuestion(shuffledQuestions[currentQuestionIndex])
+    
     
 }
 function setTime() {
@@ -33,12 +35,26 @@ function setTime() {
   
     }, 1000);
   }
-// function questions() {
-//     randomQuestion(shuffledQuestions[currentQuestionIndex])
-// }
 
+
+  //This function allows the questions to pop up after clicking the start btn. 
 function randomQuestion(questionTitle) {
     questionContainerEl.innerText = questionTitle.questionTitle
+
+    question.answersBtn.forEach(answer => {
+        let button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.choices) {
+            button.dataset.choices = answer.choices
+        }
+        button.addEventListener('click', selectAnswer)
+        answerBu
+    })
+}
+
+function selectAnswer(e) {
+    
 }
 
 //function options(choices) {

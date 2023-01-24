@@ -1,7 +1,7 @@
 let questions = [
     {
         questionTitle: "Where is the correct place to insert a JavaScript?",
-        options: [
+        answersBtn: [
             { text: "The <Head> section", choices: false },
             { text: "The <Body> section", choices: true },
             { text: "The <Both> section", choices: false },
@@ -10,7 +10,7 @@ let questions = [
 
     {
         questionTitle: "Where is the correct place to insert a JavaScript?",
-        options: [
+        answersBtn: [
             { text: "The <Head> section", choices: false },
             { text: "The <Body> section", choices: true },
             { text: "The <Both> section", choices: false },
